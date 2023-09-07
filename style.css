@@ -1,0 +1,301 @@
+:root {
+  --white: #ffffff;
+  --yellow: #e8c61e;
+
+  --black: #000000;
+  --black1: #050709;
+  --grey: rgba(0, 0, 0, 0.16);
+}
+
+* {
+  font-family: 'Helvetica', sans-serif;
+  margin: 0;
+  color: var(--black1);
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  margin: 1.5rem;
+}
+
+ul {
+  counter-reset: li;
+  list-style-type: none;
+  font-weight: 300;
+  font-size: 0.9rem;
+  padding-left: 0;
+}
+nav {
+  margin: 1rem 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a.active {
+  color: var(--yellow);
+}
+
+.logo {
+  display: inline-block;
+  margin: 0 auto;
+  width: 18rem;
+}
+
+.kit-photo-div {
+  background-color: var(--yellow);
+  width: 60%;
+}
+
+.kit-photo {
+  width: 63%;
+  margin-left: 30%;
+}
+
+.bundle-section {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.description {
+  width: 24%;
+}
+
+.star {
+  color: var(--yellow);
+}
+
+.rating {
+  display: flex;
+  gap: 0.3rem;
+  font-size: 0.6rem;
+  font-weight: 300;
+}
+
+.kit-label {
+  font-size: 1.3rem;
+  margin: 0.3rem 0;
+}
+
+.features-div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin: 1rem 0;
+}
+
+li {
+  position: relative;
+  padding: 0.2rem 0 0.2rem 1.5rem;
+  margin: 0.5rem 0;
+}
+
+li:before {
+  content: counter(li);
+  counter-increment: li;
+  height: 1rem;
+  width: 1rem;
+  border: 1px solid;
+  border-radius: 50%;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+}
+
+.grab-mine-button {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  background-color: var(--yellow);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 6px;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.price-div {
+  border-top: solid 1px var(--black1);
+  padding-top: 1rem;
+  text-align: center;
+  font-weight: 300;
+}
+
+.details {
+  padding: 4rem 0 1.5rem 0;
+  margin: 0 10%;
+  border-bottom: solid 2px var(--black1);
+  text-align: center;
+  font-size: 110%;
+}
+
+.smaller {
+  font-size: 0.7rem;
+  font-style: italic;
+}
+
+.crossed-out {
+  text-decoration: line-through;
+}
+
+.capitals {
+  text-transform: uppercase;
+}
+
+.bold {
+  font-weight: bold !important;
+}
+
+.yellow {
+  color: var(--yellow);
+}
+
+.inline {
+  display: inline-block;
+}
+
+.section img {
+  width: 50%;
+  margin: 0 auto;
+}
+.section {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease, visibility 0.5s;
+  pointer-events: none;
+}
+
+.section div {
+  position: absolute;
+  left: 55%;
+  top: 128%;
+  width: 33%;
+}
+
+.section div p {
+  margin: 1.3rem;
+  font-weight: 300;
+}
+
+#section1 {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#section3 div {
+  top: 123%;
+  left: 55%;
+}
+
+#section4 div {
+  top: 124%;
+}
+
+@media only screen and (min-width: 1042px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1042px) {
+  .bundle-section {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .kit-photo-div {
+    width: 100%;
+  }
+
+  .kit-photo {
+    width: 100%;
+    margin: 0;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  .about {
+    background-color: var(--yellow);
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .features-div i,
+  .features-div p,
+  .rating p,
+  .kit-label,
+  .star {
+    color: var(--white);
+  }
+
+  .bundle-content,
+  .price-div {
+    margin: 1rem;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .section div {
+    left: 0;
+    top: 0;
+    position: relative;
+    width: auto;
+  }
+
+  #section3 div {
+    top: 0;
+    left: 0;
+    width: 70%;
+  }
+
+  #section3 {
+    flex-direction: column-reverse;
+  }
+
+  #section3 img {
+    width: 100%;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-item {
+    display: none; /* Hide by default */
+  }
+  .nav-item:first-child {
+    display: block; /* Always display the first item */
+  }
+
+  .toggle-btn {
+    display: inline-block;
+    align-self: flex-end;
+  }
+
+  .navbar-toggle {
+    align-self: flex-end;
+    display: initial;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .navbar-toggleShow {
+    display: flex;
+  }
+}
